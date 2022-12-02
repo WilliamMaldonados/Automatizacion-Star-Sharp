@@ -1,6 +1,7 @@
 package co.com.choucair.certification.proyectobase.tasks;
 
 import co.com.choucair.certification.proyectobase.userinterface.SharsharpPage;
+import co.com.choucair.certification.proyectobase.userinterface.StarSharpLogin;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
@@ -8,7 +9,7 @@ import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 
-import static co.com.choucair.certification.proyectobase.userinterface.SharsharpPage.PASSWORD;
+
 
 public class Login implements Task {
 
@@ -23,15 +24,15 @@ public class Login implements Task {
 
 }
 
-public static Performable withData (String user,String password){
+public static Task onThePage(String user,String password){
         return Tasks.instrumented(Login.class,user,password);
 }
 @Override
 public < T extends Actor> void performAs(T actor){
 actor.attemptsTo(
-        Enter.theValue(user).into(SharsharpPage.USER_NAME),
-        Enter.theValue(password).into(PASSWORD),
-        Click.on(SharsharpPage.BTN_SINGIN)
+        Enter.theValue(user).into(StarSharpLogin.USER_NAME),
+        Enter.theValue(password).into(StarSharpLogin.PASSWORD),
+        Click.on(StarSharpLogin.BTN_SINGIN)
         );
     }
 }

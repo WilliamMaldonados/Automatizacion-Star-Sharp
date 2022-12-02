@@ -1,18 +1,35 @@
 # Autor: William Maldonado
 
- Feature: Validate the creation of the business unit and new meeting as StarSharp admin
+@stories
+  Feature: As a user, I want login in the Star Sharp Page so i should create a new meetings
+    Background:
+      Given that the user is on the star sharp page
+      And the user Logs in
+      |user | password  |
+      | admin | serenity|
 
+      @scenario1
 
+      Scenario Outline: Create a new  Bussines unit
+        And he go to the Bussines Units
+        When he create a new unit
+        |unitName|
+        |<unitName>|
+        Then the <unitName> should display in the menu
+        Examples:
 
-  @Scenario1
+        |unitName|
+        |UnidadWill1|
 
-  Scenario Outline:Validate the creation of a meeting with a business unit
-    Given That I login in the Starsharp page With "admin" and "serenity"
-    When I create a Business Unit and a meeting
-      | <nameUnit> | <parentUnit> | <meetingName> | <meetingType> | <meetingNumber> | <startDate> | <starTime> | <endDate> | <endTime> | <location> | <unit> | <organizedBy> | <reporter> | <attendeeList> | <attendeeType> | <attenDanceStatus> |
-    Then I verify the successful creation of the meeting
+        @scenario2
+        Scenario Outline: Create a meeting succesfully
+          And he go to meetings menu
+          When he create a meeting
+          | meetName | meetNumber | meetDateStart | meetDateEnd | unitName |
+          |<meetName>|<meetNumber>|<meetDateStart>|<meetDateEnd>|<unitName>|
+          Then the <meetName> should display in the table
+          Examples:
+          | meetName      | meetNumber | meetDateStart | meetDateEnd |  unitName |
+          | PruebaChoucair|     1205   |    13/02/2022 | 13/02/2022  | UnidadWIll|
 
-    Examples:
-      | nameUnit  | parentUnit              | meetingName                  | meetingType | meetingNumber | startDate  | starTime | endDate    | endTime | location | unit      | organizedBy   | reporter     | attendeeList | attendeeType | attenDanceStatus |
-      | Choucair1 | Marketing » Editor Team | Contextualizacion de negocio | Strategy    | 10            | 09/20/2022 | 10:00    | 09/20/2022 | 11:00   | On Site  | Marketing | Charles Davis | Alexis Lopez | Dylan Smith  | Guest        | Not Set          |
 

@@ -11,4 +11,25 @@
       @scenario1
 
       Scenario Outline: Create a new  Bussines unit
-        And he goto the Bu
+        And he go to the Bussines Units
+        When he create a new unit
+        |unitName|
+        |<unitName>|
+        Then the <unitName> should display in the menu
+        Examples:
+
+        |unitName|
+        |UnidadWill1|
+
+        @scenario2
+        Scenario Outline: Create a meeting succesfully
+          And he go to meetings menu
+          When he create a meeting
+          | meetName | meetNumber | meetDateStart | meetDateEnd | unitName |
+          |<meetName>|<meetNumber>|<meetDateStart>|<meetDateEnd>|<unitName>|
+          Then the <meetName> should display in the table
+          Examples:
+          | meetName      | meetNumber | meetDateStart | meetDateEnd |  unitName |
+          | PruebaChoucair|     1205   |    13/02/2022 | 13/02/2022  | UnidadWIll|
+
+

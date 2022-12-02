@@ -1,6 +1,7 @@
 package co.com.choucair.certification.proyectobase.stepdefinitions;
 
 import co.com.choucair.certification.proyectobase.model.StarSharpData;
+import co.com.choucair.certification.proyectobase.questions.SearchMeet;
 import co.com.choucair.certification.proyectobase.questions.SearchUnit;
 import co.com.choucair.certification.proyectobase.tasks.*;
 import co.com.choucair.certification.proyectobase.userinterface.SharsharpPage;
@@ -55,19 +56,20 @@ public void  setStage(){ setTheStage(new OnlineCast());}
        theActorInTheSpotlight().should(GivenWhenThen.seeThat(SearchUnit.theItemExist(data)));
     }
 
-    @Given("^he go to meetings menu$")
-    public void he_go_to_meetings_menu() {
+    @Given("^he go to meetings page$")
+    public void he_go_to_meetings_Page() {
         theActorInTheSpotlight().attemptsTo(DasboardMenu.toMeeting("Meeting"));
         }
 
-    @When("^he create a meeting$")
-    public void he_create_a_meeting(List<StarSharpData>data ) {
+    @When("^he create a new meeting$")
+    public void he_create_a_New_meeting(List<StarSharpData>data ) {
         theActorInTheSpotlight().attemptsTo(Meeting.create(data));
     }
 
-    @Then("^the PruebaChoucair should display in the table$")
-    public void the_PruebaChoucair_should_display_in_the_table(String data) {
-        theActorInTheSpotlight().should(GivenWhenThen.seeThat(S));
+        @Then("^the (.*) should display in the table$")
+        public void the_PruebaChoucair_should_display_in_the_table(String data) {
+            theActorInTheSpotlight().should(GivenWhenThen.seeThat(SearchMeet.theItemExist(data)));
+        }
     }
 
 
@@ -79,4 +81,4 @@ public void  setStage(){ setTheStage(new OnlineCast());}
 
 
 
-}
+

@@ -33,9 +33,9 @@ public class Meeting implements Task {
                 Click.on(TYPE_WEEKLY),
                 Enter.theValue(data.get(0).getMeetNumber()).into(NUMBER_INPUT),
                 Enter.theValue(data.get(0).getMeetDateStart()).into(DATE_START_INPUT),
-                SelectFromOptions.byVisibleText("08:00").from(TIME_START_SELECT),
+                SelectFromOptions.byVisibleText("12:50").from(TIME_START_SELECT),
                 Enter.theValue(data.get(0).getMeetDateEnd()).into(DATE_END_INPUT),
-                SelectFromOptions.byVisibleText("11:00").from(TIME_END_SELECT),
+                SelectFromOptions.byVisibleText("13:50").from(TIME_END_SELECT),
                 Click.on(LOCATION_SELECT),
                 Click.on(LOCATION_SD),
                 Click.on(UNIT_SELECT),
@@ -45,6 +45,8 @@ public class Meeting implements Task {
                 Click.on(ORGANIZED),
                 Click.on(REPORTER_SELECT),
                 Click.on(REPORTER),
-                Click.on(MenuPage.CREATE_BUTTON));
+                Click.on(MenuPage.CREATE_BUTTON))
+        ;
+
     }
 }

@@ -26,7 +26,7 @@ public class MeetingPage extends PageObject {
     public static final Target ORGANIZED = Target.the("select who organized the meeting").located(By.xpath("//div[@id='select2-drop']//ul//li[53]"));
     public static final Target REPORTER_SELECT = Target.the("select who is the reporter of the meeting").located(By.xpath("//div[@class='field ReporterContactId col-sm-6']//div"));
     public static final Target REPORTER = Target.the("select who is the reporter of meeting").located(By.xpath("//div[@id='select2-drop']//ul//li[34]"));
-    public static final Target TABLE_MEET_CREATED = Target.the("meet created is exist in the table").located(By.xpath("//a[contains(text(), 'PruebaWill')]"));
+        public static final Target TABLE_MEET_CREATED = Target.the("meet created is exist in the table").located(By.xpath("//a[contains(text(), 'PruebaChoucair')]"));
 
 
 }

@@ -3,21 +3,9 @@
   <properties/>
   <system-out><![CDATA[REGISTER BASE STEP LISTENER net.thucydides.core.steps.BaseStepListener@3382f8ae
 
-?[31mFailed scenarios:?[0m
-?[31msrc/test/resources/features/Starsharp.feature:33 ?[0m# Create a meeting successfully
-
-2 Scenarios (?[31m1 failed?[0m, ?[32m1 passed?[0m)
-10 Steps (?[31m1 failed?[0m, ?[32m9 passed?[0m)
-0m51,480s
-
-java.lang.AssertionError: Expected search meet
-Expected: is <true>
-     but: was <false>
-	at net.serenitybdd.screenplay.ErrorTally.throwSummaryExceptionFrom(ErrorTally.java:36)
-	at net.serenitybdd.screenplay.ErrorTally.reportAnyErrors(ErrorTally.java:30)
-	at net.serenitybdd.screenplay.Actor.should(Actor.java:301)
-	at co.com.choucair.certification.proyectobase.stepdefinitions.Starsharpstepdefinitions.the_PruebaChoucair_should_display_in_the_table(Starsharpstepdefinitions.java:71)
-	at ?.the PruebaChoucair should display in the table(src/test/resources/features/Starsharp.feature:30)
+2 Scenarios (?[32m2 passed?[0m)
+10 Steps (?[32m10 passed?[0m)
+0m45,639s
 
 ]]></system-out>
   <system-err><![CDATA[[Test worker] INFO net.thucydides.core.steps.ConsoleLoggingListener - 
@@ -61,7 +49,7 @@ TEST STARTED: Create a new  Bussines unit
 
 TEST STARTED: Create a meeting successfully
 -------------------------------------------------------------------(as-a-user--i-want-login-in-the-star-sharp-page-so-i-should-create-a-new-meetings;create-a-meeting-successfully)
-[Test worker] WARN net.thucydides.core.steps.BaseStepListener - stepStarted: net.thucydides.core.steps.ExecutedStepDescription@76973a6
+[Test worker] WARN net.thucydides.core.steps.BaseStepListener - stepStarted: net.thucydides.core.steps.ExecutedStepDescription@7f5614f9
 [pool-2-thread-1] INFO net.thucydides.core.requirements.PackageRequirementsTagProvider - Loading requirements from package requirements at: net.thucydides.showcase.cucumber.junit
 [pool-2-thread-2] INFO net.thucydides.core.requirements.PackageRequirementsTagProvider - Loading requirements from package requirements at: net.thucydides.showcase.cucumber.junit
 ]]></system-err>

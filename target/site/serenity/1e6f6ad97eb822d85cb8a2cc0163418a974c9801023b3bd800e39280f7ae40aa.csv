@@ -1,0 +1,4 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"As a user, I want login in the Star Sharp Page so i should create a new meetings","Create a new  Bussines unit","SUCCESS","2022-12-09T13:45:42.787-05:00[America/Bogota]","0.0","19.3"
+"As a user, I want login in the Star Sharp Page so i should create a new meetings","Create a meeting successfully","SUCCESS","2022-12-09T13:46:02.095-05:00[America/Bogota]","0.0","25.44"
+"As a user, I want login in the Star Sharp Page so i should create a new meetings","Create a meeting succesfully","FAILURE","2022-12-02T11:38:22.729-05:00[America/Bogota]","0.0","23.14"

@@ -15,17 +15,17 @@ import static co.com.choucair.certification.proyectobase.userinterface.MenuPage.
 
 public class Menuhome implements Task {
 
-private List<StarSharpData>data;
+private String data;
 
-public Menuhome(List<StarSharpData>data){this.data=data;}
+public Menuhome(String data){this.data=data;}
 
-    public static Menuhome create (List<StarSharpData>data){return Tasks.instrumented(Menuhome.class,data);}
+    public static Menuhome create (String data){return Tasks.instrumented(Menuhome.class,data);}
 
 
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(Click.on(NEW_UNIT_BUTTON),
-                Enter.theValue(data.get(0).getUnitName()).into(NAME_INPUT),
+                Enter.theValue(data).into(NAME_INPUT),
                 Click.on(PARENT_SELECT),
                 Click.on(PARENT_TECH),
                 Click.on(CREATE_BUTTON)

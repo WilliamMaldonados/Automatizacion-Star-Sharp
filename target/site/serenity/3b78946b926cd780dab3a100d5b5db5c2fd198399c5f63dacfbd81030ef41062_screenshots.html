@@ -23,33 +23,52 @@
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
-<!--[if IE 7]>
-<!--<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">-->
-
-<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/all.min.css">
-<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/v4-shims.min.css">
-
-<!-- JQuery -->
-<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" type="text/css" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.css">
-<link rel="stylesheet" type="text/css" href="chartist/dist/chartist.min.css">
-<script src="chartist/dist/chartist.min.js"></script>
-<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script>
-<!-- Required Stylesheets -->
+<link rel="stylesheet" href="bootstrap-icons/font/bootstrap-icons.css"><!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><!-- Required Stylesheets -->
 <link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
 
 <!-- Required Javascript -->
 <script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
-<link type="text/css" href="datatables/1.10.19/datatables.min.css" rel="stylesheet" />
-<script type="text/javascript" src="datatables/1.10.19/datatables.min.js"></script>
+<link type="text/css" href="datatables/1.11.3/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.11.3/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.11.3/time-elapsed-dhms.js"></script>
 
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <script src="bootstrap/js/bootstrap.min.js"></script>
 
-<script type="text/javascript" src="datatables/1.10.19/datatables.bootstrap4.min.js"></script>
-<link type="text/css" href="datatables/1.10.19/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
 <link rel="stylesheet" href="css/core.css"/>
 <link rel="stylesheet" href="css/link.css"/>
-<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- Nivo Slider -->
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/>
+<!--CHART.JS-->
+<script src="chartjs/chart.js"></script>
+<script src="chartjs/chartjs-plugin-datalabels@2.0.0"></script>
+<script src="chartjs/patternomaly.min.js"></script>
+<script>
+    // Register the plugin to all charts:
+    Chart.register(ChartDataLabels);
+</script>
+<!-- Nivo Slider -->
 <link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
 <script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
@@ -123,16 +142,16 @@
 <div>
     <ul class="nav nav-tabs" role="tablist">
         <li class="active">
-            <a href="#"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+            <a href="#"><i class="bi bi-journal-check"></i> Overall Test Results</a>
         </li>
         <li >
-            <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
+            <a href="capabilities.html"><i class="bi bi-journal-text"></i> Requirements</a>
         </li>
         <li >
-            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="fa fa-comments-o"></i> Features</a>
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="bi bi-chat-text"></i> Features</a>
         </li>
     </ul>
-    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 09-12-2022 09:43</span>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 09-12-2022 13:45</span>
     <br style="clear:left"/>
 </div>
 
@@ -147,7 +166,7 @@
                         <td>
                             <div>
                                 <h3 class="discreet-story-header">
-                                    <i class="fa fa-2x fa-comments-o"></i>
+                                    <i class="fs-2 bi bi-chat-left-quote large-icon"></i>
                                     <span class="story-header-title">As A User, I Want Login In The Star Sharp Page So I Should Create A New Meetings </span>
                                     <span class="badge tag-badge" style="">Feature</span>
                                 </h3>
@@ -161,13 +180,13 @@
                         <td valign="top" align="right">
                             <p class="tag">
                                 <span class="badge tag-badge" style="background:default;"
-                                    <i class="fa fa-tag"></i>&nbsp;<a class="tagLink" style="background:default;" href="e4ef4831a220e0a9cbdbfec794f5c31b3fef2adf1cb8126df1cc35a6f525969c.html">Scenario1
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="e4ef4831a220e0a9cbdbfec794f5c31b3fef2adf1cb8126df1cc35a6f525969c.html">Scenario1
                                     (tag)</a>
                                 </span>
                             </p>
                             <p class="tag">
                                 <span class="badge tag-badge" style="background:default;"
-                                    <i class="fa fa-tag"></i>&nbsp;<a class="tagLink" style="background:default;" href="8e3b9bd5eba0a2d944ce7d2a73335e57289cd25f71e556e1618e946dc87d7ec9.html">Stories
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="8e3b9bd5eba0a2d944ce7d2a73335e57289cd25f71e556e1618e946dc87d7ec9.html">Stories
                                     (tag)</a>
                                 </span>
                             </p>
@@ -179,7 +198,7 @@
                 <table class="outcome-header">
                     <tr>
                         <td colspan="2" class="test-title-bar">
-                            <span class="outcome-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="outcome-icon"><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon fa-2x' title='SUCCESS'></i></a></span>
                             <span class="test-case-title">
                                 <span class="success-color">Create a new  Bussines unit
                                     <span class="related-issue-title"></span>
@@ -204,7 +223,7 @@
     <div id="contenttilttle">
         <div class="slider-wrapper theme-default">
             <div id="slider">
-                <img src="a1d5d4fc26d5a0fb6d657dbe0845bf33b5c94bb32c530b13b78d2273518e45b7.png" title=" Example: {unitName=UnidadWill}" width="1920"/>
+                <img src="a1d5d4fc26d5a0fb6d657dbe0845bf33b5c94bb32c530b13b78d2273518e45b7.png" title=" 1: Create a new  Bussines unit ({unitName=UnidadWill})" width="1920"/>
                 <img src="a1d5d4fc26d5a0fb6d657dbe0845bf33b5c94bb32c530b13b78d2273518e45b7.png" title=" Given that the user is on the star sharp page" width="1920"/>
                 <img src="a1d5d4fc26d5a0fb6d657dbe0845bf33b5c94bb32c530b13b78d2273518e45b7.png" title=" User openup" width="1920"/>
                 <img src="a1d5d4fc26d5a0fb6d657dbe0845bf33b5c94bb32c530b13b78d2273518e45b7.png" title=" user opens the Sharsharp page" width="1920"/>
@@ -215,46 +234,46 @@
 | admin | serenity |" width="1920"/>
                 <img src="a1d5d4fc26d5a0fb6d657dbe0845bf33b5c94bb32c530b13b78d2273518e45b7.png" title=" User login" width="1920"/>
                 <img src="a1d5d4fc26d5a0fb6d657dbe0845bf33b5c94bb32c530b13b78d2273518e45b7.png" title=" user enters 'admin' into User name" width="1920"/>
-                <img src="254b0170fcccb9a461ef695bd93938da92bb20d4680de5be5bbd33a3cb487936.png" title=" user enters 'admin' into User name (completed)" width="1920"/>
-                <img src="254b0170fcccb9a461ef695bd93938da92bb20d4680de5be5bbd33a3cb487936.png" title=" user enters 'serenity' into Password" width="1920"/>
-                <img src="d357e289c304a3d9c6583193220847653faee6432de38c899af4acd9c58bdfe7.png" title=" user enters 'serenity' into Password (completed)" width="1920"/>
-                <img src="d357e289c304a3d9c6583193220847653faee6432de38c899af4acd9c58bdfe7.png" title=" user clicks on Boton sing in" width="1920"/>
-                <img src="44d174abe1b16ed4cbcc6de7d717241a84af28d2e5e8fe3a45d7f2f154ae9713.png" title=" user clicks on Boton sing in (completed)" width="1920"/>
-                <img src="44d174abe1b16ed4cbcc6de7d717241a84af28d2e5e8fe3a45d7f2f154ae9713.png" title=" User login (completed)" width="1920"/>
-                <img src="44d174abe1b16ed4cbcc6de7d717241a84af28d2e5e8fe3a45d7f2f154ae9713.png" title=" And the user Logs in
+                <img src="eb8305efa3fd78a035cf7706e856adbd91270efa97959a656a46c0998a0f5bcc.png" title=" user enters 'admin' into User name (completed)" width="1920"/>
+                <img src="eb8305efa3fd78a035cf7706e856adbd91270efa97959a656a46c0998a0f5bcc.png" title=" user enters 'serenity' into Password" width="1920"/>
+                <img src="ff905a62e23a15aac8ddf37c4efcfbc0676253434e14a6b3eb268bd878938de9.png" title=" user enters 'serenity' into Password (completed)" width="1920"/>
+                <img src="ff905a62e23a15aac8ddf37c4efcfbc0676253434e14a6b3eb268bd878938de9.png" title=" user clicks on Boton sing in" width="1920"/>
+                <img src="cc66dba4aef6b99ad6f19dfa1164ffb975265ac36a152c3e6d10854c906f9fb7.png" title=" user clicks on Boton sing in (completed)" width="1920"/>
+                <img src="cc66dba4aef6b99ad6f19dfa1164ffb975265ac36a152c3e6d10854c906f9fb7.png" title=" User login (completed)" width="1920"/>
+                <img src="cc66dba4aef6b99ad6f19dfa1164ffb975265ac36a152c3e6d10854c906f9fb7.png" title=" And the user Logs in
 | user | password |
 | admin | serenity | (completed)" width="1920"/>
-                <img src="44d174abe1b16ed4cbcc6de7d717241a84af28d2e5e8fe3a45d7f2f154ae9713.png" title=" And he go to the Bussines Units" width="1920"/>
-                <img src="44d174abe1b16ed4cbcc6de7d717241a84af28d2e5e8fe3a45d7f2f154ae9713.png" title=" User dasboard menu" width="1920"/>
-                <img src="b5a264bc0d5b2cbbfd11e3a91a1d6ac15213fe50beaa488313d2664da56f7827.png" title=" user clicks on item organization in menu" width="1920"/>
-                <img src="4d31cf86d3df852cc957d37fc56525fd4b0b236e30cb0ad64001f14fb79ef80f.png" title=" user clicks on item organization in menu (completed)" width="1920"/>
-                <img src="4d31cf86d3df852cc957d37fc56525fd4b0b236e30cb0ad64001f14fb79ef80f.png" title=" user clicks on item organization in menu" width="1920"/>
-                <img src="4805b24cc5a4a4dfbe04ca78268032649389dd4c8543f10d6739d1677a62cca4.png" title=" user clicks on item organization in menu (completed)" width="1920"/>
+                <img src="cc66dba4aef6b99ad6f19dfa1164ffb975265ac36a152c3e6d10854c906f9fb7.png" title=" And he go to the Bussines Units" width="1920"/>
+                <img src="a97888f1de26df7cd54f9ce7472cb71b9e2d07392141ac5356dd53ee07039fd3.png" title=" User dasboard menu" width="1920"/>
+                <img src="b4e133477ba2dee4d9530d66310bb7d0b6185ef9ed73654bd644a98a3495fbfb.png" title=" user clicks on item organization in menu" width="1920"/>
+                <img src="7f36f52cd40d8be4777e95f0dd41a6fc181bfb1be6f662efc3010035a149dbfe.png" title=" user clicks on item organization in menu (completed)" width="1920"/>
+                <img src="2c4508d8fd00e8615ee399df2d43041d3c2e2a1ca37e6c06c8c11b97862b01dc.png" title=" user clicks on item unit link" width="1920"/>
+                <img src="4805b24cc5a4a4dfbe04ca78268032649389dd4c8543f10d6739d1677a62cca4.png" title=" user clicks on item unit link (completed)" width="1920"/>
                 <img src="4805b24cc5a4a4dfbe04ca78268032649389dd4c8543f10d6739d1677a62cca4.png" title=" User dasboard menu (completed)" width="1920"/>
                 <img src="4805b24cc5a4a4dfbe04ca78268032649389dd4c8543f10d6739d1677a62cca4.png" title=" And he go to the Bussines Units (completed)" width="1920"/>
                 <img src="4805b24cc5a4a4dfbe04ca78268032649389dd4c8543f10d6739d1677a62cca4.png" title=" When he create a new unit
 | unitName |
 | UnidadWill |" width="1920"/>
                 <img src="4805b24cc5a4a4dfbe04ca78268032649389dd4c8543f10d6739d1677a62cca4.png" title=" User menuhome" width="1920"/>
-                <img src="4805b24cc5a4a4dfbe04ca78268032649389dd4c8543f10d6739d1677a62cca4.png" title=" user clicks on item organization in menu" width="1920"/>
-                <img src="140f5993a0f62f0b181dba21c478de4bd8e7b41d405148538ac8a2076fee325d.png" title=" user clicks on item organization in menu (completed)" width="1920"/>
-                <img src="140f5993a0f62f0b181dba21c478de4bd8e7b41d405148538ac8a2076fee325d.png" title=" user enters 'UnidadWill' into item organization in menu" width="1920"/>
-                <img src="4a07a9ffca0273d9908fda388635da7e9488d9cca0eb1c711e2bad39bceaef61.png" title=" user enters 'UnidadWill' into item organization in menu (completed)" width="1920"/>
-                <img src="4a07a9ffca0273d9908fda388635da7e9488d9cca0eb1c711e2bad39bceaef61.png" title=" user clicks on item organization in menu" width="1920"/>
-                <img src="d1bdea72dbc4c0f9ea987369ed20d353fe4508a01c5a289681130d73685d7253.png" title=" user clicks on item organization in menu (completed)" width="1920"/>
-                <img src="d1bdea72dbc4c0f9ea987369ed20d353fe4508a01c5a289681130d73685d7253.png" title=" user clicks on item organization in menu" width="1920"/>
-                <img src="37409e7a2dc48321e30deede3149e2af09b17ff0d64326a0f3f51159c94a6e13.png" title=" user clicks on item organization in menu (completed)" width="1920"/>
-                <img src="37409e7a2dc48321e30deede3149e2af09b17ff0d64326a0f3f51159c94a6e13.png" title=" user clicks on item organization in menu" width="1920"/>
-                <img src="7aa212b959f652aad9e579d2238405bb4cb8ff3e8b8593ce5c1820c4972831c3.png" title=" user clicks on item organization in menu (completed)" width="1920"/>
-                <img src="7aa212b959f652aad9e579d2238405bb4cb8ff3e8b8593ce5c1820c4972831c3.png" title=" User menuhome (completed)" width="1920"/>
-                <img src="7aa212b959f652aad9e579d2238405bb4cb8ff3e8b8593ce5c1820c4972831c3.png" title=" When he create a new unit
+                <img src="4805b24cc5a4a4dfbe04ca78268032649389dd4c8543f10d6739d1677a62cca4.png" title=" user clicks on new unit button" width="1920"/>
+                <img src="6e8838d32adaa908a80b9714e41f14077c166c5acef75e352e8b139a100ca48b.png" title=" user clicks on new unit button (completed)" width="1920"/>
+                <img src="6e8838d32adaa908a80b9714e41f14077c166c5acef75e352e8b139a100ca48b.png" title=" user enters 'UnidadWill' into input name" width="1920"/>
+                <img src="93fe1be468fe9defbc7c83ca19a3f427d5677740608faca52985f647eb69dbd1.png" title=" user enters 'UnidadWill' into input name (completed)" width="1920"/>
+                <img src="93fe1be468fe9defbc7c83ca19a3f427d5677740608faca52985f647eb69dbd1.png" title=" user clicks on parent select" width="1920"/>
+                <img src="a4556aa98548f61147e01345c2c858e4f5be9471bf95e7a06affe9ff2a43f250.png" title=" user clicks on parent select (completed)" width="1920"/>
+                <img src="a4556aa98548f61147e01345c2c858e4f5be9471bf95e7a06affe9ff2a43f250.png" title=" user clicks on parent tech" width="1920"/>
+                <img src="1c123a8f5aa2f60e0eb6667bfe10fc9ebda7bd2f15dbaf9f42cff7920be38e33.png" title=" user clicks on parent tech (completed)" width="1920"/>
+                <img src="1c123a8f5aa2f60e0eb6667bfe10fc9ebda7bd2f15dbaf9f42cff7920be38e33.png" title=" user clicks on button create" width="1920"/>
+                <img src="9b98a9a3794d822c48f50e62d0588b801c51aee3cb08c89a8a4bdab1f18017a5.png" title=" user clicks on button create (completed)" width="1920"/>
+                <img src="9b98a9a3794d822c48f50e62d0588b801c51aee3cb08c89a8a4bdab1f18017a5.png" title=" User menuhome (completed)" width="1920"/>
+                <img src="9b98a9a3794d822c48f50e62d0588b801c51aee3cb08c89a8a4bdab1f18017a5.png" title=" When he create a new unit
 | unitName |
 | UnidadWill | (completed)" width="1920"/>
-                <img src="7aa212b959f652aad9e579d2238405bb4cb8ff3e8b8593ce5c1820c4972831c3.png" title=" Then the UnidadWill should display in the menu" width="1920"/>
-                <img src="af5c571f5868c18498dce95b4e76410b581c4e0414bc63e4de94649bd197d2b0.png" title=" Then search unit" width="1920"/>
-                <img src="af5c571f5868c18498dce95b4e76410b581c4e0414bc63e4de94649bd197d2b0.png" title=" Then search unit (completed)" width="1920"/>
-                <img src="cc048580a90c0c63ce1d71eec20a94673858e44112c1a54c88bb2358dda55615.png" title=" Then the UnidadWill should display in the menu (completed)" width="1920"/>
-                <img src="cc048580a90c0c63ce1d71eec20a94673858e44112c1a54c88bb2358dda55615.png" title=" Example: {unitName=UnidadWill} (completed): <span class='success-color'>SUCCESS</span>" width="1920"/>
+                <img src="9b98a9a3794d822c48f50e62d0588b801c51aee3cb08c89a8a4bdab1f18017a5.png" title=" Then the UnidadWill should display in the menu" width="1920"/>
+                <img src="6b993cb1cf7ac3d9d764d14fc78b5038f642ca9b515b1578f70c1e58f60258cd.png" title=" Then search unit" width="1920"/>
+                <img src="898e512f968d9ccf28395b56592376ba318fc00f174ba4654cc15e94fc9aee07.png" title=" Then search unit (completed)" width="1920"/>
+                <img src="898e512f968d9ccf28395b56592376ba318fc00f174ba4654cc15e94fc9aee07.png" title=" Then the UnidadWill should display in the menu (completed)" width="1920"/>
+                <img src="898e512f968d9ccf28395b56592376ba318fc00f174ba4654cc15e94fc9aee07.png" title=" 1: Create a new  Bussines unit ({unitName=UnidadWill}) (completed): <span class='success-color'>SUCCESS</span>" width="1920"/>
             </div>
         </div>
 
@@ -263,7 +282,7 @@
 </div>
 <div id="beforefooter"></div>
 <div id="bottomfooter">
-    <span class="version">Serenity BDD version 2.0.90</span>
+    <span class="version">Serenity BDD version 3.3.2</span>
 </div>
 </body>
 </html>

@@ -5,11 +5,12 @@ import co.com.choucair.certification.proyectobase.questions.SearchMeet;
 import co.com.choucair.certification.proyectobase.questions.SearchUnit;
 import co.com.choucair.certification.proyectobase.tasks.*;
 import co.com.choucair.certification.proyectobase.userinterface.SharsharpPage;
-import cucumber.api.PendingException;
-import cucumber.api.java.Before;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+
+import io.cucumber.datatable.DataTable;
+import io.cucumber.java.Before;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import net.serenitybdd.screenplay.GivenWhenThen;
 import net.serenitybdd.screenplay.actions.Open;
 import net.serenitybdd.screenplay.actors.OnlineCast;
@@ -17,6 +18,7 @@ import net.serenitybdd.screenplay.actors.OnStage;
 
 
 import java.util.List;
+import java.util.Map;
 
 import static net.serenitybdd.screenplay.actors.OnStage.*;
 
@@ -34,8 +36,9 @@ public void  setStage(){ setTheStage(new OnlineCast());}
 
 
     @Given("^the user Logs in$")
-    public void the_user_Logs_in(List<StarSharpData>data) {
-        theActorInTheSpotlight().attemptsTo(Login.onThePage(data.get(0).getUser(),data.get(0).getPassword()));
+    public void the_user_Logs_in(DataTable data) {
+        List <Map<String,String>>datalogin= data.asMaps(String.class,String.class);
+        theActorInTheSpotlight().attemptsTo(Login.onThePage(datalogin.get(0).get("user"),datalogin.get(0).get("password")));
           }
 
     @Given("^he go to the Bussines Units$")
@@ -45,8 +48,9 @@ public void  setStage(){ setTheStage(new OnlineCast());}
     }
 
     @When("^he create a new unit$")
-    public void he_create_a_new_unit(List<StarSharpData>data) {
-        theActorInTheSpotlight().attemptsTo(Menuhome.create(data));
+    public void he_create_a_new_unit(DataTable data) {
+        List <Map<String,String>>dataunit= data.asMaps(String.class,String.class);
+        theActorInTheSpotlight().attemptsTo(Menuhome.create(dataunit.get(0).get("unitName")));
 
 
     }
@@ -58,12 +62,13 @@ public void  setStage(){ setTheStage(new OnlineCast());}
 
     @Given("^he go to meetings page$")
     public void he_go_to_meetings_Page() {
-        theActorInTheSpotlight().attemptsTo(DasboardMenu.toMeeting("Meeting"));
+        theActorInTheSpotlight().attemptsTo(DasboardMeet.toMeeting("Meeting"));
         }
 
     @When("^he create a new meeting$")
-    public void he_create_a_New_meeting(List<StarSharpData>data ) {
-        theActorInTheSpotlight().attemptsTo(Meeting.create(data));
+    public void he_create_a_New_meeting(DataTable data  ) {
+        List <Map<String,String>>datameeting= data.asMaps(String.class,String.class);
+        theActorInTheSpotlight().attemptsTo(Meeting.create(datameeting.get(0)));
     }
 
         @Then("^the (.*) should display in the table$")

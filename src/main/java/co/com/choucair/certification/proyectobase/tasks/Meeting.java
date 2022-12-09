@@ -11,16 +11,17 @@ import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
 
 import java.util.List;
+import java.util.Map;
 
 import static co.com.choucair.certification.proyectobase.userinterface.MeetingPage.*;
 
 public class Meeting implements Task {
 
-    private List<StarSharpData> data;
+    private Map<String, String> data;
 
-    public Meeting (List<StarSharpData>data) {this.data = data;}
+    public Meeting (Map<String, String>data) {this.data = data;}
 
-    public static Meeting create(List<StarSharpData>data){return Tasks.instrumented(Meeting.class,data);
+    public static Meeting create(Map<String, String> data){return Tasks.instrumented(Meeting.class,data);
 
     }
 
@@ -28,18 +29,18 @@ public class Meeting implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(Click.on(MeetingPage.NEW_MEETING_BUTTON),
-                Enter.theValue(data.get(0).getMeetName()).into(NAME_INPUT),
+                Enter.theValue(data.get("meetName")).into(NAME_INPUT),
                 Click.on(TYPE_SELECT),
                 Click.on(TYPE_WEEKLY),
-                Enter.theValue(data.get(0).getMeetNumber()).into(NUMBER_INPUT),
-                Enter.theValue(data.get(0).getMeetDateStart()).into(DATE_START_INPUT),
+                Enter.theValue(data.get("meetNumber")).into(NUMBER_INPUT),
+                Enter.theValue(data.get("meetDateStart")).into(DATE_START_INPUT),
                 SelectFromOptions.byVisibleText("12:50").from(TIME_START_SELECT),
-                Enter.theValue(data.get(0).getMeetDateEnd()).into(DATE_END_INPUT),
+                Enter.theValue(data.get("meetDateEnd")).into(DATE_END_INPUT),
                 SelectFromOptions.byVisibleText("13:50").from(TIME_END_SELECT),
                 Click.on(LOCATION_SELECT),
                 Click.on(LOCATION_SD),
                 Click.on(UNIT_SELECT),
-                Enter.theValue(data.get(0).getUnitName()).into(UNIT_INPUT),
+                Enter.theValue(data.get("unitName ")).into(UNIT_INPUT),
                 Click.on(UNIT_PRUEBA),
                 Click.on(ORGANIZED_SELECT),
                 Click.on(ORGANIZED),

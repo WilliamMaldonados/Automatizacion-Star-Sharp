@@ -1,8 +1,9 @@
 package co.com.choucair.certification.proyectobase.runners;
 
 
-import cucumber.api.CucumberOptions;
-import cucumber.api.SnippetType;
+
+
+import io.cucumber.junit.CucumberOptions;
 import net.serenitybdd.cucumber.CucumberWithSerenity;
 import org.junit.runner.RunWith;
 
@@ -12,7 +13,7 @@ import org.junit.runner.RunWith;
         tags= "@stories",
         glue="co.com.choucair.certification.proyectobase.stepdefinitions",
 
-        snippets= SnippetType.CAMELCASE)
+        snippets= CucumberOptions.SnippetType.CAMELCASE)
 
 public class RunnerTags {
 }

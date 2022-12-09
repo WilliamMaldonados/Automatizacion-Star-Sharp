@@ -1,0 +1,5 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"As a user, I want login in the Star Sharp Page so i should create a new meetings","Create a new  Bussines unit","SUCCESS","2022-12-09T13:45:42.787-05:00[America/Bogota]","0.0","19.3"
+"login in sharsharp page and create a new business unit and afer this create a new meeting","login in sharsharp page and create a new business unit and afer this create a new meeting","FAILURE","2022-12-01T15:58:24.713-05:00[America/Bogota]","0.0","16.31"
+"Validate the creation of the business unit and new meeting as StarSharp admin","Validate the creation of a meeting with a business unit","ERROR","2022-12-01T22:42:27.203-05:00[America/Bogota]","0.0","8.05"
+"Academy Choucair","Search for automation course","SUCCESS","2022-11-30T14:53:15.531-05:00[America/Bogota]","0.0","16.01"

@@ -5,8 +5,8 @@
     Background:
       Given that the user is on the star sharp page
       And the user Logs in
-      |user | password  |
-      | admin | serenity|
+      | user | password  |
+      | admin | serenity |
 
       @scenario1
 

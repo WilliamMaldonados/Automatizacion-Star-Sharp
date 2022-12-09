@@ -14,6 +14,6 @@ public class SearchMeet implements Question<Boolean> {
 
     @Override
     public Boolean answeredBy(Actor actor) {
-        return Text.of(MeetingPage.TABLE_MEET_CREATED).viewedBy(actor).asString().equals(item);
+        return Text.of(MeetingPage.TABLE_MEET_CREATED).answeredBy(actor).equals(item);
     }
 }

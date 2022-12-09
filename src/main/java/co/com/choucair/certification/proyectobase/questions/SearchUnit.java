@@ -13,6 +13,6 @@ public static SearchUnit theItemExist(String item){return new SearchUnit(item);}
 
     @Override
     public Boolean answeredBy(Actor actor) {
-                return Text.of(MenuPage.Table_UNIT_CREATED).viewedBy(actor).asString().equals(item);
+                return Text.of(MenuPage.Table_UNIT_CREATED).answeredBy(actor).equals(item);
     }
 }

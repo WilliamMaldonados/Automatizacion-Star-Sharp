@@ -1,1 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="As a user, I want login in the Star Sharp Page so i should create a new meetings" skipped="0" tests="2" time="34.43" timestamp="2022-12-06 05:10:29"><testcase name="Create a new  Bussines unit"/><testcase name="Create a meeting successfully"/></testsuite>
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="As a user, I want login in the Star Sharp Page so i should create a new meetings" skipped="0" tests="2" time="51.28" timestamp="2022-12-07 06:20:46"><testcase name="Create a new  Bussines unit"/><testcase name="Create a meeting successfully"><failure message="Expected search meet&#10;Expected: is &lt;true&gt;&#10;     but: was &lt;false&gt;" type="java.lang.AssertionError">Expected search meet
+Expected: is &lt;true&gt;
+     but: was &lt;false&gt;</failure><system-err>Expected search meet
+Expected: is &lt;true&gt;
+     but: was &lt;false&gt;&#13;
+co.com.choucair.certification.proyectobase.stepdefinitions.Starsharpstepdefinitions.the_PruebaChoucair_should_display_in_the_table(Starsharpstepdefinitions.java:71)&#13;
+✽.the PruebaChoucair should display in the table(src/test/resources/features/Starsharp.feature:30)&#13;
+</system-err></testcase></testsuite>
